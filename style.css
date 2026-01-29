@@ -1,41 +1,113 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
 }
 
-header {
-  background-color: #0d6efd;
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
   color: white;
-  padding: 40px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
 }
 
-section {
-  padding: 30px;
-  margin: 20px;
-  background-color: white;
-  border-radius: 8px;
+nav ul {
+  display: flex;
+  list-style: none;
 }
 
-h2 {
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
   color: #0d6efd;
 }
 
-ul {
-  list-style-type: square;
+.logo {
+  color: #0d6efd;
 }
 
-.project {
-  border-left: 4px solid #0d6efd;
-  padding-left: 10px;
-  margin-bottom: 15px;
-}
-
-footer {
-  text-align: center;
-  padding: 15px;
-  background-color: #222;
+/* HOME */
+.home {
+  height: 100vh;
+  background: linear-gradient(to right, #0d6efd, #003c8f);
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.home span {
+  color: #ffdd57;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ffdd57;
+  color: #000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 60px;
+}
+
+.alt {
+  background: #f4f4f4;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #0d6efd;
+}
+
+/* SKILLS */
+.skills span {
+  display: inline-block;
+  background: #0d6efd;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* PROJECTS */
+.project {
+  background: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-left: 5px solid #0d6efd;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
