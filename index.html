@@ -2,32 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
+  <title>Mark Hernandez | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Mark Hernandez</h1>
-    <p>IT Student | Web Developer</p>
-  </header>
+  <nav>
+    <h2 class="logo">Mark.</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="home">
+    <h1>Hello, I’m <span>Mark Hernandez</span></h1>
+    <p>IT Student</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
 
   <section id="about">
     <h2>About Me</h2>
     <p>
       I am an IT student passionate about web development and system design.
-      I enjoy building simple, clean, and functional applications.
+      I enjoy creating clean, functional, and user-friendly applications.
     </p>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="alt">
     <h2>Skills</h2>
-    <ul>
-      <li>HTML & CSS</li>
-      <li>JavaScript</li>
-      <li>PHP & MySQL</li>
-      <li>C Programming</li>
-    </ul>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>PHP</span>
+      <span>MySQL</span>
+      <span>C Programming</span>
+    </div>
   </section>
 
   <section id="projects">
@@ -40,8 +54,14 @@
 
     <div class="project">
       <h3>LearnIT</h3>
-      <p>Interactive C-programming learning tool.</p>
+      <p>Interactive C-programming learning tool with quizzes and simulations.</p>
     </div>
+  </section>
+
+  <section id="contact" class="alt">
+    <h2>Contact</h2>
+    <p>Email: markhernandez1233@gmail.com</p>
+    <p>GitHub: https://github.com/m0xxus</p>
   </section>
 
   <footer>
