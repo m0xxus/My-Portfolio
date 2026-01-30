@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark's Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+
+body {
+    background-color: #0d0d0d;
+    color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h5 {
+    color: #ff4b4b;
+}
+
+a {
+    color: #ff4b4b;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* Achievements Cards Styling */
+.achievement-card {
+    display: flex;
+    align-items: center;
+    background-color: #262626;
+    border-left: 5px solid #ff4b4b;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(255, 75, 75, 0.1);
+    gap: 15px;
+    transition: transform 0.4s ease;
+}
+
+.achievement-card:hover {
+    transform: scale(1.02);
+}
+
+.achievement-card i {
+    font-size: 2rem;
+    color: #ff4b4b;
+}
+
+/* Core Skills Section */
+.core-skill {
+    background-color: #1a1a1a;
+    border: 2px dashed #ff4b4b;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 4px 12px rgba(255, 75, 75, 0.15);
+}
+
+.core-skill:hover {
+    background-color: #2c2c2c;
+    transform: translateY(-5px);
+}
+
+.core-skill i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ff4b4b;
+}
+
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+}
+
+.timeline-card.animate {
+    animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 10px rgba(255, 75, 75, 0.1);
+}
+
+.navbar-brand {
+    color: #ff4b4b !important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff4b4b !important;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(to right, #1a1a1a, #0d0d0d);
+}
+
+.hero img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ff4b4b;
+    margin-bottom: 20px;
+}
+
+.btn-main {
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.btn-main:hover {
+    background-color: #e63c3c;
+    color: white;
+}
+
+/* About Section */
+#about {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.section-title {
+    color: #ff4b4b;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.timeline-card {
+    background-color: #262626;
+    padding: 15px 20px;
+    border-left: 5px solid #ff4b4b;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+
+#projects .card-body,
+#projects .card-text {
+    color: #ffffff;
+}
+
+#projects .card {
+    background-color: #1a1a1a;
+    border: none;
+    box-shadow: 0 2px 12px rgba(255, 75, 75, 0.2);
+    transition: transform 0.3s;
+}
+
+#projects .card:hover {
+    transform: translateY(-5px);
+}
+
+#projects .card-title {
+    color: #ff4b4b;
+}
+
+#projects .btn-outline-primary {
+    border-color: #ff4b4b;
+    color: #ff4b4b;
+    background-color: transparent;
+}
+
+#projects .btn-outline-primary:hover {
+    background-color: #ff4b4b;
+    color: #ffffff;
+}
+
+/* Skills Section */
+@keyframes slideIn {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply animation */
+.skill-level {
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+/* Optional stagger effect */
+.skill-bar:nth-child(1) .skill-level { animation-delay: 0.2s; }
+.skill-bar:nth-child(2) .skill-level { animation-delay: 0.4s; }
+.skill-bar:nth-child(3) .skill-level { animation-delay: 0.6s; }
+/* Add more if you have more skills */
+
+#skills {
+    background-color: #0d0d0d;
+}
+
+.skill-bar {   
+    background-color: #2c2c2c;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.skill-level {
+    background-color: #ff4b4b;
+    height: 100%;
+    text-align: right;
+    padding-right: 10px;
+    color: white;
+    line-height: 25px;
+    border-radius: 25px;
+}
+
+/* Contact */
+#contact {
+    background-color: #1a1a1a;
+    color: #ff4b4b;
+}
+
+#contact input,
+#contact textarea {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: white;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #ff4b4b;
+    box-shadow: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #0d0d0d;
+    color: #999;
+    border-top: 1px solid #222;
+}
+
+/* Social Icons */
+#contact .fa-brands {
+    color: #ff4b4b; 
+    transition: transform 0.3s;
+}
+
+#contact .fa-brands:hover {
+    transform: scale(1.2);
+    color: #ffffff;
+}
+
+    </style>
+
+    
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">My Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <img src="profilelogo.jpg" alt="Profile">
+        <h1 class="mt-4">Hi, I'm <span style="color: #b74b4b;">Mark Hernandez</span></h1>
+        <p class="lead">A passionate student sharing my work and skills</p>
+    </div>
+</section>
+
+<!-- About / Achievements -->
+<section id="about" class="py-5">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p>I'm Mark, a Computer Science student passionate about building projects and learning new technologies. I have a strong background in web development, programming, and design.</p>
+        <div class="mt-4">
+            <h3 class="mt-5">Achievements</h3>
+<div class="achievement-card">
+    <i class="fas fa-database"></i>
+    <div>
+        <h5>2021–Present - Data Annotating Job</h5>
+        <p>Started a Data Annotating Job that focuses on labeling maps.</p>
+    </div>
+</div>
+<div class="achievement-card">
+    <i class="fas fa-award"></i>
+    <div>
+        <h5>2023–2024 - Dean's Lister</h5>
+        <p>Consistent academic performer in BSCS program.</p>
+    </div>
+</div>
+<div class="achievement-card">
+    <i class="fas fa-laptop-code"></i>
+    <div>
+        <h5>2025 - Built LearnIT</h5>
+        <p>A modular C-learning platform with gamified experience.</p>
+    </div>
+</div>
+<div class="achievement-card">
+    <i class="fas fa-car"></i>
+    <div>
+        <h5>2025 - Developed ParCCA</h5>
+        <p>Smart parking system for City College of Angeles.</p>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Projects</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="learnit.png" alt="LearnIT" class="card-img-top img-fluid" style="object-fit: cover; height: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">LearnIT</h5>
+                        <p class="card-text">An interactive platform to learn C programming with simulations and quizzes.</p>
+                        <a href="https://www.figma.com/design/anRYUYpfuxBrgjcXN9QTcZ/Web-1-Figma?node-id=0-1&t=M4ZP1Q9hT8kq0Vzv-1" 
+                           class="btn btn-outline-primary" 
+                           target="_blank" 
+                           rel="noopener noreferrer">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="parcca.png" alt="ParCCA" class="card-img-top img-fluid" style="object-fit: cover; height: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">ParCCA</h5>
+                        <p class="card-text">A parking reservation system for CCA students and staff.</p>
+                        <a href="https://www.figma.com/proto/X19f2XLB64MrPINnTZ2sxu/Prototype-ParCCA?node-id=7-2&p=f&t=wYToiDYFvg58DBqU-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=7%3A2" 
+                           class="btn btn-outline-primary" 
+                           target="_blank" 
+                           rel="noopener noreferrer">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Skills -->
+<section id="skills" class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center">My Skills</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>HTML</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 90%;">90%</div>
+                </div>
+                <p class="mt-3">CSS</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 85%;">85%</div>
+                </div>
+                <p class="mt-3">JavaScript</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 80%;">80%</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p>Python</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 80%;">80%</div>
+                </div>
+                <p class="mt-3">C Programming</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 85%;">85%</div>
+                </div>
+                <p class="mt-3">Data Annotation</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 95%;">95%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 class="section-title text-center mt-5">Core Competencies</h3>
+<div class="row">
+    <div class="col-md-4">
+        <div class="core-skill">
+            <i class="fas fa-lightbulb"></i>
+            <h5>Creativity</h5>
+            <p>Thinking outside the box and innovating solutions.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="core-skill">
+            <i class="fas fa-users"></i>
+            <h5>Collaboration</h5>
+            <p>Team player with excellent communication skills.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="core-skill">
+            <i class="fas fa-clock"></i>
+            <h5>Time Management</h5>
+            <p>Efficiently managing tasks and meeting deadlines.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="core-skill">
+            <i class="fas fa-brain"></i>
+            <h5>Critical Thinking</h5>
+            <p>Analytical approach to problem-solving and coding.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="core-skill">
+            <i class="fas fa-tools"></i>
+            <h5>Problem Solving</h5>
+            <p>Turning challenges into opportunities with code.</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="core-skill">
+            <i class="fas fa-lightbulb"></i>
+            <h5>Adaptability</h5>
+            <p>Can easilty adapt to any situations.</p>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Contact Me</h2>
+        <form action="mailto:mgbhernanz@gmail.com" method="POST" enctype="text/plain" id="contactForm" class="mx-auto" style="max-width: 600px;">
+            <div class="mb-3">
+                <label>Name</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Email</label> 
+                <input type="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Subject</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Message</label>
+                <textarea class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-main">Send Message</button>
+        </form>
+        <div class="text-center mt-4">
+            <a href="https://www.facebook.com/profile.php?id=100025349190793" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook fa-2x me-3"></i></a>
+            <a href="https://www.instagram.com/twinkly__toes/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fa-2x"></i></a>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate");
+                    observer.unobserve(entry.target); // animate once
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        document.querySelectorAll('.timeline-card').forEach(card => {
+            observer.observe(card);
+        });
+    });
+</script>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; <span id="year"></span> Mark. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Basic form validation
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        alert("Thank you for reaching out! I'll get back to you soon.");
+        e.preventDefault(); // remove this to actually submit the form
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
